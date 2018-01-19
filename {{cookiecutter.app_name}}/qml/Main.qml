@@ -5,7 +5,7 @@ import Ubuntu.Components 1.3
 MainView {
     id: root
     objectName: 'mainView'
-    applicationName: '{{cookiecutter.app_full_name}}'
+    applicationName: '{{cookiecutter.app_full_name|lower}}'
     automaticOrientation: true
 
     width: units.gu(45)
