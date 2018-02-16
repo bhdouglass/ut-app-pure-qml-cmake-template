@@ -60,3 +60,16 @@ add_custom_target(${DESKTOP_FILE_NAME} ALL
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME} DESTINATION ${DATA_DIR})
 
 add_subdirectory(po)
+
+# Make source files visible in qtcreator
+file(GLOB_RECURSE PROJECT_SRC_FILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    qml/*.qml
+    qml/*.js
+    *.json
+    *.json.in
+    *.apparmor
+    *.desktop.in
+)
+
+add_custom_target(${PROJECT_NAME}_FILES ALL SOURCES ${PROJECT_SRC_FILES})
